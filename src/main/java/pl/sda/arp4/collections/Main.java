@@ -1,13 +1,15 @@
 package pl.sda.arp4.collections;
 
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
         // deklaracja pojedynczej wartosci
-        int a = 4;
+        int a = 4; // 4 bajty
 
         // deklaracja tablicy
         // tablica wypełnia się zawsze zerami
-        int[] tablica = new int[5]; // deklaracja zer
+        int[] tablica = new int[5]; // deklaracja zer (4 * 5 = 20 bajtów)
         int[] tablicaDeklaracja = new int[]{5, 10, 15, 20, 25}; // deklaracja wartości
 
         tablica[0] = 1; // przypisanie do komórki 0 wartości 1
@@ -16,14 +18,16 @@ public class Main {
         tablica[3] = -30; // przypisanie do komórki 3 wartości -30
         tablica[4] = 75; // przypisanie do komórki 4 wartości 75
 
-//        for (int i = 0; i < tablica.length; i++) {
-//            System.out.println((i+1) +". " + tablica[i]);
-//        }
+        for (int i = 0; i < tablica.length; i++) {
+            System.out.println((i+1) +". " + tablica[i]);
+        }
 
         // nie ma odwołania do iteratora
         for (int wartość : tablica) {
             System.out.println(wartość);
         }
 
+        // wylosowanie liczby z zakresu 0-99 (nie wylosuje 100)
+        int wylosowanaLiczba = new Random().nextInt(100);
     }
 }
